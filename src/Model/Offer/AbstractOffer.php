@@ -132,6 +132,12 @@ abstract class AbstractOffer implements OfferInterface
     private $store;
 
     /**
+     * @var string
+     */
+    private $color;
+
+
+    /**
      * Array of custom elements (element types are keys) of arrays of element values
      * There may be multiple elements of the same type
      * @var array[]
@@ -557,6 +563,22 @@ abstract class AbstractOffer implements OfferInterface
         $this->cpa = $cpa;
 
         return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getColor()
+    {
+        return $this->color;
+    }
+
+    /**
+     * @param string $color
+     */
+    public function setColor($color)
+    {
+        $this->color = $color;
     }
 
     /**
