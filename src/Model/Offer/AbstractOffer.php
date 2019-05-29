@@ -139,6 +139,11 @@ abstract class AbstractOffer implements OfferInterface
     private $customElements;
 
     /**
+     * @var string
+     */
+    private $stock;
+
+    /**
      * @return array
      */
     public function toArray()
@@ -467,6 +472,14 @@ abstract class AbstractOffer implements OfferInterface
     }
 
     /**
+     * @param string $stock
+     */
+    public function setStock($stock)
+    {
+        $this->stock = $stock;
+    }
+
+    /**
      * @return string
      */
     public function getDescription()
@@ -707,6 +720,14 @@ abstract class AbstractOffer implements OfferInterface
     }
 
     /**
+     * @return string
+     */
+    public function getStock()
+    {
+        return $this->stock;
+    }
+
+    /**
      * @return array
      */
     abstract protected function getOptions();
@@ -744,6 +765,7 @@ abstract class AbstractOffer implements OfferInterface
             'country_of_origin' => $this->getCountryOfOrigin(),
             'downloadable' => $this->isDownloadable(),
             'adult' => $this->isAdult(),
+            'stock' => $this->getStock(),
             'cpa' => $this->getCpa(),
             'barcode' => $this->getBarcodes(),
         ];
