@@ -789,6 +789,7 @@ abstract class AbstractOffer implements OfferInterface
             'adult' => $this->isAdult(),
             'stock' => $this->getStock(),
             'cpa' => $this->getCpa(),
+            'color' => $this->getColor(),
             'barcode' => $this->getBarcodes(),
         ];
     }
